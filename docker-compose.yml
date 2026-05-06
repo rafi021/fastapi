@@ -12,7 +12,6 @@ services:
       - "${DB_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-aiverse_user}"]
       interval: 10s
@@ -43,6 +42,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      network: host
     container_name: aiverse_api
     restart: unless-stopped
     ports:
