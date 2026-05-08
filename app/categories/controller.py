@@ -1,7 +1,8 @@
+from typing import Optional, Sequence
 from fastapi import HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.categories.schemas import CategoryCreateSchema, CategoryResponse, CategoryUpdateSchema
+from app.categories.schemas import CategoryCreateSchema, CategoryResponse, CategoryUpdateSchema, CategoryTreeResponse
 from app.categories.service import CategoryService
 from app.core.response import APIResponse
 
@@ -10,8 +11,14 @@ class CategoryController:
     def __init__(self, db: AsyncSession) -> None:
         self.service = CategoryService(db)
 
-    async def list_categories(self, skip: int = 0, limit: int = 100) -> APIResponse:
-        categories = await self.service.get_all(skip, limit)
+    async def get_category_tree(self, skip: int = 0, limit: int = 100, search: Optional[str] = None) -> APIResponse:
+        categories = await self.service.get_categories(skip, limit, search)
+        return APIResponse.ok(
+            data=[CategoryTreeResponse.model_validate(c) for c in categories],
+            message="Category tree retrieved successfully",
+        )
+    async def list_categories(self, skip: int = 0, limit: int = 100, search: Optional[str] = None) -> APIResponse:
+        categories = await self.service.get_all(skip, limit, search)
         return APIResponse.ok(
             data=[CategoryResponse.model_validate(c) for c in categories],
             message="Categories retrieved successfully",

@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -8,13 +9,21 @@ from app.database import get_db
 router = APIRouter(prefix="/categories", tags=["Categories"])
 
 
+@router.get("/category-tree", summary="Get category tree")
+async def get_category_tree(
+    skip: int = Query(0, ge=0, description="Number of records to skip"),
+    limit: int = Query(100, ge=1, le=1000, description="Max records to return"),
+    search: Optional[str] = Query(None, description="Search term"),
+    db: AsyncSession = Depends(get_db)):
+    return await CategoryController(db).get_category_tree(skip, limit, search)
+
 @router.get("/", summary="List all categories")
 async def list_categories(
     skip: int = Query(0, ge=0, description="Number of records to skip"),
     limit: int = Query(100, ge=1, le=1000, description="Max records to return"),
-    db: AsyncSession = Depends(get_db),
-):
-    return await CategoryController(db).list_categories(skip, limit)
+    search: Optional[str] = Query(None, description="Search term"),
+    db: AsyncSession = Depends(get_db)):
+    return await CategoryController(db).list_categories(skip, limit, search)
 
 
 @router.get("/{category_id}", summary="Get a category by ID")

@@ -1,7 +1,9 @@
 from typing import Optional, Sequence
+from unittest import result
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import selectinload
 
 from app.categories.model import Category
 from app.categories.schemas import CategoryCreateSchema, CategoryUpdateSchema
@@ -11,15 +13,42 @@ class CategoryService:
     def __init__(self, db: AsyncSession) -> None:
         self.db = db
 
-    async def get_all(self, skip: int = 0, limit: int = 100) -> Sequence[Category]:
-        result = await self.db.execute(
-            select(Category).order_by(Category.id).offset(skip).limit(limit)
+    async def get_categories(self, skip: int = 0, limit: int = 100, search: Optional[str] = None) -> Sequence[Category]:
+        query = (
+            select(Category)
+            .where(Category.parent_id == None)  # Get only top-level parents for a tree
+            .options(selectinload(Category.children))
         )
+        if search:
+            query = query.where(Category.name.ilike(f"%{search}%"))
+        result = await self.db.execute(query)
+        return result.scalars().all()
+
+    async def get_all(self, skip: int = 0, limit: int = 100, search: Optional[str] = None) -> Sequence[Category]:
+        query = (
+            select(Category)
+            .options(
+                selectinload(Category.parent),  # Loads the parent
+                selectinload(Category.children)  # Loads the list of children
+            )
+            .order_by(Category.id)
+            .offset(skip)
+            .limit(limit)
+        )
+        if search:
+            query = query.where(Category.name.ilike(f"%{search}%"))
+
+        result = await self.db.execute(query)
         return result.scalars().all()
 
     async def get_by_id(self, category_id: int) -> Optional[Category]:
         result = await self.db.execute(
-            select(Category).where(Category.id == category_id)
+            select(Category)
+            .options(
+                selectinload(Category.parent),  # Loads the parent
+                selectinload(Category.children)  # Loads the list of children
+            )
+            .where(Category.id == category_id)
         )
         return result.scalar_one_or_none()
 
