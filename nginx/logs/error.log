@@ -18,3 +18,41 @@
 2026/05/06 17:51:01 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
 2026/05/06 17:51:58 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
 2026/05/08 20:52:45 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:09:36 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:09:36 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:09:37 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:09:37 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:09:37 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:09:37 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:09:38 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:09:38 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:09:39 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:09:39 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:09:41 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:09:41 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:09:44 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:09:44 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:09:51 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:09:51 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:10:04 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:10:04 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:10:30 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:10:30 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:11:21 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:11:21 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:12:21 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:12:21 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:13:21 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:13:21 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:14:22 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:14:22 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:15:22 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:15:22 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:16:22 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:16:22 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:17:22 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:17:22 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:18:23 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:18:23 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:19:23 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:19:23 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)

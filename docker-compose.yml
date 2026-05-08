@@ -86,10 +86,39 @@ services:
     networks:
       - aiverse-network
 
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: rabbitmq
+    restart: unless-stopped
+    ports:
+      - "1883:1883" # MQTT
+      - "5672:5672" # RabbitMQ default port
+      - "15672:15672" # Management web UI port
+      - "1885:15675" # MQTT over websocket
+    command: "/bin/bash -c \"rabbitmq-plugins enable --offline rabbitmq_mqtt rabbitmq_web_mqtt rabbitmq_amqp1_0; rabbitmq-server\""
+    environment:
+      RABBITMQ_HOST: '%'
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-guest}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-guest}
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - aiverse-network
+    healthcheck:
+      test:
+          - CMD
+          - rabbitmq-diagnostics
+          - '-q'
+          - ping
+      retries: 3
+      timeout: 5s
+
 volumes:
   postgres_data:
     driver: local
   redis_data:
+    driver: local
+  rabbitmq_data:
     driver: local
 
 networks:
