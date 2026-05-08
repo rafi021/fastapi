@@ -56,3 +56,39 @@
 2026/05/08 21:18:23 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
 2026/05/08 21:19:23 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
 2026/05/08 21:19:23 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:30:25 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:31:31 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:32:36 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:33:41 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:34:46 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:35:52 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:36:57 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:38:02 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:39:07 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:40:13 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:41:18 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:42:23 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:43:28 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:44:34 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:45:39 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:46:44 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:47:49 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:48:55 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:50:00 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:51:05 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:52:10 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:53:16 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:54:21 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:55:26 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:56:32 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:57:37 [emerg] 1#1: host not found in upstream "api:8000" in /etc/nginx/nginx.conf:48
+2026/05/08 21:58:42 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:58:42 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 21:59:43 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 21:59:43 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 22:00:43 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 22:00:43 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 22:01:43 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 22:01:43 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)
+2026/05/08 22:02:43 [warn] 1#1: the "listen ... http2" directive is deprecated, use the "http2" directive instead in /etc/nginx/nginx.conf:68
+2026/05/08 22:02:43 [emerg] 1#1: cannot load certificate "/etc/nginx/ssl/cert.pem": BIO_new_file() failed (SSL: error:80000002:system library::No such file or directory:calling fopen(/etc/nginx/ssl/cert.pem, r) error:10000080:BIO routines::no such file)

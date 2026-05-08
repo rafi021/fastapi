@@ -49,14 +49,16 @@ services:
       - "${API_PORT:-8000}:8000"
     environment:
       - DATABASE_URL=postgresql+asyncpg://${DB_USER:-aiverse_user}:${DB_PASSWORD:-aiverse_pass}@postgres:5432/${DB_NAME:-aiverse_db}
+      - CELERY_BROKER_URL=amqp://${RABBITMQ_USER:-guest}:${RABBITMQ_PASSWORD:-guest}@rabbitmq:5672//
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
       - REDIS_URL=redis://redis:6379/0
       - SECRET_KEY=${SECRET_KEY}
-      - ENVIRONMENT=${ENVIRONMENT:-production}
-      - DEBUG=${DEBUG:-False}
     depends_on:
       postgres:
         condition: service_healthy
       redis:
+        condition: service_healthy
+      rabbitmq:
         condition: service_healthy
     volumes:
       - ./logs:/app/logs
@@ -112,7 +114,41 @@ services:
           - ping
       retries: 3
       timeout: 5s
-
+  # Celery Worker
+  worker:
+    build: .
+    container_name: aiverse_worker
+    restart: unless-stopped
+    command: celery -A app.celery_app.celery_app worker --loglevel=info
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://${DB_USER:-aiverse_user}:${DB_PASSWORD:-aiverse_pass}@postgres:5432/${DB_NAME:-aiverse_db}
+      - CELERY_BROKER_URL=amqp://${RABBITMQ_USER:-guest}:${RABBITMQ_PASSWORD:-guest}@rabbitmq:5672//
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - aiverse-network
+  # Flower - Celery Monitoring Tool
+  flower:
+    image: mher/flower:latest
+    container_name: aiverse_flower
+    restart: unless-stopped
+    environment:
+      - CELERY_BROKER_URL=pyamqp://${RABBITMQ_USER:-guest}:${RABBITMQ_PASSWORD:-guest}@rabbitmq:5672//
+      - FLOWER_PORT=5555
+    ports:
+      - "5555:5555"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - aiverse-network
+      
 volumes:
   postgres_data:
     driver: local

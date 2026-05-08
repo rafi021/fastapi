@@ -10,6 +10,8 @@ class Settings(BaseSettings):
     DEBUG: bool = True
     APP_TITLE: str = "E-Commerce API"
     APP_VERSION: str = "1.0.0"
+    CELERY_BROKER_URL: str = "amqp://guest:guest@localhost:5672//"
+    CELERY_RESULT_BACKEND: str = "redis://localhost:6379/0"
 
 
 settings = Settings()
