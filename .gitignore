@@ -1,0 +1,35 @@
+# --- Python Virtual Environments ---
+.venv/
+venv/
+env/
+ENV/
+bin/
+lib/
+include/
+
+# --- Environment Variables (CRITICAL) ---
+# Never commit your database credentials or secrets!
+.env
+
+# --- Python Caching ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Database ---
+# If you use SQLite for local testing, ignore the DB file
+*.sqlite3
+*.db
+
+# --- OS / IDE Specific ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+nginx/logs
