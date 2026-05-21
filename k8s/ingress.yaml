@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: aiverse-api-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  ingressClassName: traefik
+  tls:
+  - hosts:
+    - aiverse.local
+    secretName: aiverse-tls-secret
+  rules:
+  - host: aiverse.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: aiverse-api-service
+            port:
+              number: 80
